@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zona Descuentos | Oferta del Mes</title>
+
+  <style>
+    :root {
+      --azul: #071b3a;
+      --azul2: #0c2d5a;
+      --verde: #1fa34a;
+      --verde2: #16843a;
+      --gris: #f4f6f9;
+      --texto: #17233c;
+      --blanco: #ffffff;
+      --borde: #dbe2ea;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: var(--texto);
+      line-height: 1.45;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: auto;
+      padding: 28px 22px 40px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #149447, #e52b35);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      font-weight: 800;
+      transform: rotate(-8deg);
+    }
+
+    .brand h1 {
+      font-size: 48px;
+      line-height: 0.95;
+      color: var(--azul);
+    }
+
+    .brand h1 span {
+      color: var(--verde);
+      display: block;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 8px;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: #6b7280;
+      font-weight: 700;
+    }
+
+    .credizona {
+      color: #0b71bd;
+      font-weight: 900;
+    }
+
+    .trust {
+      display: flex;
+      gap: 28px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--azul);
+      text-align: center;
+    }
+
+    .trust div {
+      min-width: 95px;
+    }
+
+    .urgency {
+      background: var(--azul);
+      color: white;
+      border-radius: 14px;
+      padding: 22px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 44px;
+    }
+
+    .urgency strong {
+      font-size: 26px;
+      display: block;
+    }
+
+    .urgency .number {
+      font-size: 52px;
+      color: var(--verde);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .timer {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 42px;
+      align-items: center;
+      margin-bottom: 34px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--verde);
+      color: white;
+      font-weight: 800;
+      padding: 9px 20px;
+      border-radius: 12px;
+      margin-bottom: 22px;
+    }
+
+    .hero h2 {
+      font-size: 50px;
+      line-height: 1.08;
+      color: var(--azul);
+      margin-bottom: 18px;
+    }
+
+    .hero h2 span {
+      color: var(--verde);
+    }
+
+    .hero p {
+      font-size: 22px;
+      margin-bottom: 22px;
+      color: #344054;
+    }
+
+    .bullets {
+      list-style: none;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .bullets li {
+      margin-bottom: 12px;
+    }
+
+    .bullets li::before {
+      content: "✓";
+      background: var(--verde);
+      color: white;
+      border-radius: 50%;
+      padding: 2px 7px;
+      margin-right: 10px;
+      font-weight: 900;
+    }
+
+    .product-img {
+      width: 100%;
+      border-radius: 24px;
+      background: radial-gradient(circle, #e9f2ff, #ffffff 68%);
+      padding: 10px;
+    }
+
+    .product-img img {
+      width: 100%;
+      display: block;
+    }
+
+    .payment-box {
+      background: white;
+      border: 1px solid var(--borde);
+      box-shadow: 0 10px 25px rgba(7, 27, 58, 0.12);
+      border-radius: 18px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .payment-option {
+      padding: 8px 18px;
+    }
+
+    .payment-option:first-child {
+      border-right: 1px solid var(--borde);
+    }
+
+    .payment-option h3 {
+      color: var(--verde);
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .payment-option.blue h3 {
+      color: #0966c2;
+    }
+
+    .price {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--verde);
+      margin: 10px 0;
+    }
+
+    .price.blue {
+      color: #0966c2;
+    }
+
+    .legal {
+      font-size: 13px;
+      color: #667085;
+      margin-bottom: 18px;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-weight: 900;
+      font-size: 18px;
+      border-radius: 8px;
+      padding: 17px 20px;
+      margin-top: 14px;
+      transition: 0.2s;
+    }
+
+    .btn.green {
+      background: var(--verde);
+    }
+
+    .btn.green:hover {
+      background: var(--verde2);
+    }
+
+    .btn.blue {
+      background: #0966c2;
+    }
+
+    .btn.blue:hover {
+      background: #0753a0;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      background: white;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(7, 27, 58, 0.08);
+    }
+
+    .benefit {
+      border-right: 1px solid var(--borde);
+      padding: 0 16px;
+    }
+
+    .benefit:last-child {
+      border-right: none;
+    }
+
+    .benefit strong {
+      display: block;
+      color: var(--azul);
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .benefit span {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .security {
+      background: var(--azul);
+      color: white;
+      border-radius: 16px;
+      padding: 26px 34px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .security h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .stars {
+      color: var(--verde);
+      font-size: 34px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .bottom {
+      background: var(--azul);
+      color: white;
+      border-radius: 16px;
+      padding: 26px 34px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .bottom h3 {
+      font-size: 24px;
+    }
+
+    .bottom .btn {
+      width: 320px;
+      margin: 0;
+    }
+
+    @media (max-width: 850px) {
+      header,
+      .hero,
+      .payment-box,
+      .security,
+      .bottom {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      header {
+        flex-direction: column;
+      }
+
+      .brand {
+        flex-direction: column;
+      }
+
+      .brand h1 {
+        font-size: 38px;
+      }
+
+      .trust {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .urgency {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+      }
+
+      .payment-option:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--borde);
+        padding-bottom: 28px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit {
+        border-right: none;
+        border-bottom: 1px solid var(--borde);
+        padding: 14px 0;
+      }
+
+      .benefit:last-child {
+        border-bottom: none;
+      }
+
+      .bottom .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <header>
+      <div class="brand">
+        <div class="logo-icon">%</div>
+        <div>
+          <h1>Zona <span>Descuentos</span></h1>
+          <small>ASOCIADA A <span class="credizona">CREDIZONA</span></small>
+        </div>
+      </div>
+
+      <div class="trust">
+        <div>🛡️<br />COMPRA<br />SEGURA</div>
+        <div>🚚<br />ENTREGA<br />RÁPIDA</div>
+        <div>✅<br />RESPALDO<br />GARANTIZADO</div>
+      </div>
+    </header>
+
+    <section class="urgency">
+      <div>
+        <strong>LOTE LIMITADO</strong>
+        <span>¡No te quedes sin el tuyo!</span>
+      </div>
+
+      <div style="text-align:center;">
+        <span>QUEDAN</span>
+        <div class="number">18</div>
+        <strong style="font-size:16px;">UNIDADES DISPONIBLES</strong>
+      </div>
+
+      <div style="text-align:center;">
+        <strong style="font-size:16px;">LA OFERTA TERMINA EN:</strong>
+        <div class="timer" id="timer">02 : 14 : 36 : 42</div>
+        <span>DÍAS &nbsp;&nbsp; HS &nbsp;&nbsp; MIN &nbsp;&nbsp; SEG</span>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div>
+        <div class="badge">OFERTA DEL MES</div>
+
+        <h2>
+          Colchón Spring Air King + Seguro de Hogar <span>Incluido</span>
+        </h2>
+
+        <p>
+          Máximo confort para tu descanso. Compralo contado o en cuotas con crédito aprobado en minutos.
+        </p>
+
+        <ul class="bullets">
+          <li>Confort premium</li>
+          <li>Máxima durabilidad</li>
+          <li>Descanso garantizado</li>
+        </ul>
+      </div>
+
+      <div class="product-img">
+        <img src="colchon.png" alt="Colchón Spring Air King" />
+      </div>
+    </section>
+
+    <section class="payment-box">
+      <div class="payment-option">
+        <h3>PAGÁ CONTADO</h3>
+        <p>Precio especial</p>
+        <div class="price">USD 850</div>
+
+        <a class="btn green" href="https://LINK-DE-PAGO.com" target="_blank">
+          Comprar ahora con tarjeta →
+        </a>
+
+        <p class="legal" style="text-align:center; margin-top:14px;">
+          Pago 100% seguro
+        </p>
+      </div>
+
+      <div class="payment-option blue">
+        <h3>PAGÁ EN CUOTAS</h3>
+        <p>Desde</p>
+        <div class="price blue">$X.XXX <span style="font-size:18px;">/mes</span></div>
+        <p class="legal">Sujeto a aprobación crediticia</p>
+
+        <a class="btn blue" href="https://wa.me/598XXXXXXXX?text=Hola,%20quiero%20comprar%20el%20colch%C3%B3n%20en%20cuotas%20con%20cr%C3%A9dito" target="_blank">
+          Comprar en cuotas con crédito →
+        </a>
+
+        <p class="legal" style="text-align:center; margin-top:14px;">
+          Aprobación en minutos
+        </p>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="benefit">
+        <strong>Incluye seguro de hogar por 12 meses</strong>
+        <span>Sin costo adicional</span>
+      </div>
+
+      <div class="benefit">
+        <strong>Entrega rápida en 24–48 hs</strong>
+        <span>En todo el país</span>
+      </div>
+
+      <div class="benefit">
+        <strong>Sin trámites complicados</strong>
+        <span>100% online</span>
+      </div>
+
+      <div class="benefit">
+        <strong>Calidad garantizada</strong>
+        <span>Marca Spring Air</span>
+      </div>
+    </section>
+
+    <section class="security">
+      <div>
+        <h3>Tu compra protegida</h3>
+        <p>Todos nuestros productos incluyen garantía oficial y respaldo postventa.</p>
+      </div>
+
+      <div>
+        <div class="stars">★★★★★</div>
+        <p style="text-align:center;">Miles de clientes satisfechos</p>
+      </div>
+    </section>
+
+    <section class="bottom">
+      <div>
+        <h3>¡Aprovechá esta oferta única!</h3>
+        <p>Stock limitado. Cuando se acaba, se acaba.</p>
+      </div>
+
+      <a class="btn green" href="#top">No me lo pierdo →</a>
+    </section>
+
+  </main>
+
+  <script>
+    // Countdown simple. Cambiar fecha final acá:
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 2);
+    endDate.setHours(endDate.getHours() + 14);
+    endDate.setMinutes(endDate.getMinutes() + 36);
+    endDate.setSeconds(endDate.getSeconds() + 42);
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const distance = endDate.getTime() - now;
+
+      if (distance <= 0) {
+        document.getElementById("timer").innerHTML = "OFERTA FINALIZADA";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("timer").innerHTML =
+        String(days).padStart(2, "0") + " : " +
+        String(hours).padStart(2, "0") + " : " +
+        String(minutes).padStart(2, "0") + " : " +
+        String(seconds).padStart(2, "0");
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
