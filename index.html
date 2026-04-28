@@ -9,7 +9,7 @@
 <style>
 body {
   margin: 0;
-  background: radial-gradient(circle at 30% 20%, #0f1f0f, #000);
+  background: radial-gradient(circle at 30% 20%, #0c1a0c, #000);
   color: white;
   font-family: Arial, sans-serif;
 }
@@ -20,19 +20,41 @@ body {
   padding: 40px 20px;
 }
 
-/* LOGO */
-.logo {
-  font-size: 48px;
+/* LOGO EXACTO */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #6cff00, #0b7a28 60%, #d92a2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-8deg);
+  font-size: 34px;
   font-weight: 900;
 }
 
-.logo span {
+.logo-text {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.logo-text span {
+  display: block;
   color: #7cff00;
 }
 
 .sub {
-  color: #aaa;
   margin-top: 5px;
+  color: #aaa;
+  font-weight: bold;
 }
 
 /* HERO */
@@ -46,7 +68,7 @@ body {
 .badge {
   background: #7cff00;
   color: black;
-  padding: 6px 12px;
+  padding: 6px 14px;
   display: inline-block;
   font-weight: bold;
   margin-bottom: 20px;
@@ -70,19 +92,32 @@ h1 {
   width: 100%;
 }
 
-/* SHIELD */
+/* ESCUDO CORRECTO */
 .shield {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 10px;
+  width: 180px;
+  padding: 20px;
   border: 2px solid #7cff00;
-  padding: 15px;
-  border-radius: 20px;
+  border-radius: 20px 20px 40px 40px;
+  background: rgba(0,0,0,0.8);
   text-align: center;
+  box-shadow: 0 0 25px rgba(124,255,0,0.5);
 }
 
 .shield strong {
-  font-size: 20px;
+  display: block;
+  font-size: 22px;
+}
+
+.shield small {
+  display: inline-block;
+  margin-top: 10px;
+  background: #7cff00;
+  color: black;
+  padding: 4px 8px;
+  font-weight: bold;
 }
 
 /* PRICING */
@@ -150,9 +185,18 @@ h1 {
 
 <div class="container">
 
-<div class="logo">Zona <span>Descuentos</span></div>
-<div class="sub">ASOCIADA A CREDIZONA</div>
+<!-- LOGO -->
+<div class="logo-wrap">
+  <div class="logo-box">%</div>
+  <div>
+    <div class="logo-text">
+      Zona <span>Descuentos</span>
+    </div>
+    <div class="sub">ASOCIADA A CREDIZONA</div>
+  </div>
+</div>
 
+<!-- HERO -->
 <div class="hero">
 <div>
 
@@ -169,32 +213,36 @@ Incluida
 </div>
 
 <div class="product">
+
+<!-- ESCUDO -->
 <div class="shield">
 <strong>GARANTÍA<br>EXTENDIDA</strong>
+<small>24 MESES</small>
 </div>
 
 <img src="colchon.png">
+
 </div>
 </div>
 
+<!-- PRECIOS -->
 <div class="pricing">
 
 <div class="box">
 <h3>Contado</h3>
 <div class="price">USD 850</div>
-
 <a class="btn" href="#">Comprar</a>
 </div>
 
 <div class="box">
 <h3>Cuotas</h3>
 <div class="price green">$X.XXX</div>
-
 <a class="btn" href="#">Con crédito</a>
 </div>
 
 </div>
 
+<!-- BENEFICIOS -->
 <div class="benefits">
 <div class="benefit">Garantía extendida</div>
 <div class="benefit">Entrega rápida</div>
@@ -202,6 +250,7 @@ Incluida
 <div class="benefit">Calidad premium</div>
 </div>
 
+<!-- FINAL -->
 <div class="final">
 <div>
 <strong>Stock limitado</strong><br>
