@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zona Descuentos | Oferta del Mes</title>
+  <title>Zona Descuentos | Garantía Extendida Incluida</title>
 
   <style>
     :root {
-      --azul: #071b3a;
-      --azul2: #0c2d5a;
-      --verde: #1fa34a;
-      --verde2: #16843a;
-      --gris: #f4f6f9;
-      --texto: #17233c;
-      --blanco: #ffffff;
-      --borde: #dbe2ea;
+      --black: #020403;
+      --dark: #071007;
+      --green: #86ff00;
+      --green2: #4fd000;
+      --white: #ffffff;
+      --muted: #b7c0b0;
+      --line: rgba(134, 255, 0, 0.45);
     }
 
     * {
@@ -25,346 +24,460 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: var(--texto);
-      line-height: 1.45;
+      background:
+        radial-gradient(circle at 70% 25%, rgba(134,255,0,0.18), transparent 35%),
+        radial-gradient(circle at 30% 80%, rgba(134,255,0,0.08), transparent 35%),
+        var(--black);
+      color: var(--white);
     }
 
     .page {
       max-width: 1180px;
       margin: auto;
-      padding: 28px 22px 40px;
+      padding: 28px 24px 40px;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 24px;
-      margin-bottom: 28px;
+      gap: 28px;
+      margin-bottom: 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
 
     .logo-icon {
-      width: 70px;
-      height: 70px;
+      width: 76px;
+      height: 76px;
       border-radius: 18px;
-      background: linear-gradient(135deg, #149447, #e52b35);
-      color: #fff;
+      background: linear-gradient(135deg, #6dff00, #0a8f2d 55%, #e22c2c);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 34px;
-      font-weight: 800;
+      color: white;
+      font-size: 38px;
+      font-weight: 900;
       transform: rotate(-8deg);
+      box-shadow: 0 0 24px rgba(134,255,0,0.35);
     }
 
     .brand h1 {
-      font-size: 48px;
-      line-height: 0.95;
-      color: var(--azul);
+      font-size: 50px;
+      line-height: 0.92;
+      font-weight: 900;
     }
 
     .brand h1 span {
-      color: var(--verde);
       display: block;
+      color: var(--green);
+      text-shadow: 0 0 12px rgba(134,255,0,0.45);
     }
 
     .brand small {
       display: block;
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 18px;
-      letter-spacing: 1px;
-      color: #6b7280;
+      color: var(--muted);
       font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .credizona {
-      color: #0b71bd;
+      color: #ffffff;
       font-weight: 900;
     }
 
     .trust {
       display: flex;
-      gap: 28px;
-      font-size: 13px;
-      font-weight: 800;
-      color: var(--azul);
+      gap: 30px;
       text-align: center;
+      font-weight: 900;
+      font-size: 13px;
+      color: var(--white);
     }
 
-    .trust div {
-      min-width: 95px;
+    .trust span {
+      color: var(--green);
+      font-size: 30px;
+      display: block;
+      margin-bottom: 4px;
     }
 
     .urgency {
-      background: var(--azul);
-      color: white;
-      border-radius: 14px;
-      padding: 22px 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 30px;
+      background: linear-gradient(90deg, rgba(134,255,0,0.08), rgba(0,0,0,0.55));
+      box-shadow: 0 0 28px rgba(134,255,0,0.18);
       display: grid;
       grid-template-columns: 1fr 1fr 1.2fr;
-      gap: 20px;
+      gap: 24px;
       align-items: center;
-      margin-bottom: 44px;
+      margin-bottom: 34px;
     }
 
     .urgency strong {
       font-size: 26px;
       display: block;
+      color: var(--green);
     }
 
-    .urgency .number {
-      font-size: 52px;
-      color: var(--verde);
+    .urgency small {
+      font-size: 16px;
+      color: white;
+    }
+
+    .units {
+      text-align: center;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+    }
+
+    .units .number {
+      font-size: 64px;
+      line-height: 0.9;
       font-weight: 900;
-      line-height: 1;
+      color: var(--green);
+      text-shadow: 0 0 16px rgba(134,255,0,0.55);
+    }
+
+    .timer-box {
+      text-align: center;
     }
 
     .timer {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 900;
       letter-spacing: 3px;
+      color: var(--green);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 42px;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 38px;
       align-items: center;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
     }
 
     .badge {
       display: inline-block;
-      background: var(--verde);
-      color: white;
-      font-weight: 800;
-      padding: 9px 20px;
-      border-radius: 12px;
-      margin-bottom: 22px;
+      background: var(--green);
+      color: #061006;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-weight: 900;
+      margin-bottom: 20px;
     }
 
-    .hero h2 {
-      font-size: 50px;
-      line-height: 1.08;
-      color: var(--azul);
-      margin-bottom: 18px;
+    h2 {
+      font-size: 58px;
+      line-height: 0.98;
+      font-weight: 1000;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
 
-    .hero h2 span {
-      color: var(--verde);
+    h2 .green {
+      color: var(--green);
+      text-shadow: 0 0 18px rgba(134,255,0,0.55);
+      font-style: italic;
+    }
+
+    .brush {
+      display: inline-block;
+      background: var(--green);
+      color: #061006;
+      padding: 2px 14px 6px;
+      transform: rotate(-1deg);
+      margin-top: 4px;
     }
 
     .hero p {
-      font-size: 22px;
-      margin-bottom: 22px;
-      color: #344054;
+      font-size: 21px;
+      color: #e8eee2;
+      margin-bottom: 24px;
+      max-width: 520px;
     }
 
     .bullets {
       list-style: none;
-      font-size: 20px;
-      font-weight: 600;
+      margin-top: 18px;
     }
 
     .bullets li {
-      margin-bottom: 12px;
+      margin-bottom: 13px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .bullets li span {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-left: 36px;
     }
 
     .bullets li::before {
       content: "✓";
-      background: var(--verde);
-      color: white;
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
-      padding: 2px 7px;
-      margin-right: 10px;
+      border: 2px solid var(--green);
+      color: var(--green);
+      margin-right: 12px;
       font-weight: 900;
     }
 
-    .product-img {
-      width: 100%;
-      border-radius: 24px;
-      background: radial-gradient(circle, #e9f2ff, #ffffff 68%);
-      padding: 10px;
+    .product-wrap {
+      position: relative;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .product-img img {
+    .glow-circle {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      border: 2px solid rgba(134,255,0,0.45);
+      box-shadow: 0 0 60px rgba(134,255,0,0.25);
+      z-index: 0;
+    }
+
+    .product-wrap img {
       width: 100%;
+      max-width: 650px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 25px 28px rgba(0,0,0,0.8));
+    }
+
+    .shield {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      z-index: 3;
+      width: 220px;
+      padding: 24px 18px;
+      text-align: center;
+      border: 2px solid var(--green);
+      border-radius: 28px 28px 48px 48px;
+      background: rgba(0, 0, 0, 0.82);
+      box-shadow: 0 0 30px rgba(134,255,0,0.45);
+    }
+
+    .shield strong {
       display: block;
+      font-size: 34px;
+      line-height: 1;
+      color: white;
+      text-transform: uppercase;
     }
 
-    .payment-box {
-      background: white;
-      border: 1px solid var(--borde);
-      box-shadow: 0 10px 25px rgba(7, 27, 58, 0.12);
-      border-radius: 18px;
-      padding: 30px;
+    .shield small {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--green);
+      color: #061006;
+      font-weight: 900;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    .payment {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-bottom: 30px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.62);
+      box-shadow: 0 0 24px rgba(134,255,0,0.15);
+      margin-bottom: 16px;
     }
 
-    .payment-option {
-      padding: 8px 18px;
+    .pay-card {
+      padding: 30px 46px;
     }
 
-    .payment-option:first-child {
-      border-right: 1px solid var(--borde);
+    .pay-card:first-child {
+      border-right: 1px solid var(--line);
     }
 
-    .payment-option h3 {
-      color: var(--verde);
+    .pay-card h3 {
+      color: var(--green);
       font-size: 24px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }
 
-    .payment-option.blue h3 {
-      color: #0966c2;
+    .pay-card .label {
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase;
     }
 
     .price {
-      font-size: 44px;
-      font-weight: 900;
-      color: var(--verde);
-      margin: 10px 0;
+      font-size: 54px;
+      font-weight: 1000;
+      margin: 8px 0 16px;
+      color: white;
     }
 
-    .price.blue {
-      color: #0966c2;
+    .price.green {
+      color: var(--green);
+      text-shadow: 0 0 12px rgba(134,255,0,0.4);
     }
 
     .legal {
       font-size: 13px;
-      color: #667085;
-      margin-bottom: 18px;
+      color: var(--muted);
+      margin-top: -8px;
+      margin-bottom: 14px;
     }
 
     .btn {
       display: block;
       text-align: center;
       text-decoration: none;
-      color: white;
-      font-weight: 900;
+      background: linear-gradient(180deg, var(--green), var(--green2));
+      color: #061006;
       font-size: 18px;
-      border-radius: 8px;
-      padding: 17px 20px;
-      margin-top: 14px;
-      transition: 0.2s;
+      font-weight: 1000;
+      text-transform: uppercase;
+      padding: 17px 22px;
+      border-radius: 9px;
+      box-shadow: 0 0 18px rgba(134,255,0,0.35);
     }
 
-    .btn.green {
-      background: var(--verde);
+    .btn:hover {
+      filter: brightness(1.08);
     }
 
-    .btn.green:hover {
-      background: var(--verde2);
-    }
-
-    .btn.blue {
-      background: #0966c2;
-    }
-
-    .btn.blue:hover {
-      background: #0753a0;
+    .micro {
+      margin-top: 12px;
+      text-align: center;
+      color: #d7ded1;
+      font-size: 14px;
     }
 
     .benefits {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      background: white;
-      border: 1px solid var(--borde);
+      border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 24px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 20px rgba(7, 27, 58, 0.08);
+      background: rgba(0,0,0,0.62);
+      overflow: hidden;
+      margin-bottom: 16px;
     }
 
     .benefit {
-      border-right: 1px solid var(--borde);
-      padding: 0 16px;
+      padding: 22px;
+      border-right: 1px solid var(--line);
     }
 
     .benefit:last-child {
       border-right: none;
     }
 
+    .benefit .icon {
+      color: var(--green);
+      font-size: 30px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
     .benefit strong {
       display: block;
-      color: var(--azul);
-      font-size: 17px;
+      font-size: 16px;
+      text-transform: uppercase;
       margin-bottom: 6px;
     }
 
     .benefit span {
-      color: #667085;
+      color: var(--muted);
       font-size: 14px;
     }
 
-    .security {
-      background: var(--azul);
-      color: white;
-      border-radius: 16px;
-      padding: 26px 34px;
+    .proof {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
-      margin-bottom: 30px;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(0,0,0,0.62);
+      overflow: hidden;
+      margin-bottom: 16px;
     }
 
-    .security h3 {
-      font-size: 22px;
-      margin-bottom: 6px;
+    .proof div {
+      padding: 28px 36px;
+    }
+
+    .proof div:first-child {
+      border-right: 1px solid var(--line);
+    }
+
+    .proof h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }
 
     .stars {
-      color: var(--verde);
-      font-size: 34px;
-      font-weight: 900;
+      font-size: 40px;
+      color: var(--green);
       text-align: center;
+      letter-spacing: 4px;
     }
 
-    .bottom {
-      background: var(--azul);
-      color: white;
-      border-radius: 16px;
-      padding: 26px 34px;
-      display: flex;
-      justify-content: space-between;
+    .final-cta {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
       align-items: center;
-      gap: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(0,0,0,0.72);
+      padding: 26px 34px;
+      box-shadow: 0 0 26px rgba(134,255,0,0.18);
     }
 
-    .bottom h3 {
-      font-size: 24px;
+    .final-cta h3 {
+      font-size: 28px;
+      text-transform: uppercase;
     }
 
-    .bottom .btn {
-      width: 320px;
-      margin: 0;
+    .final-cta p {
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       header,
       .hero,
-      .payment-box,
-      .security,
-      .bottom {
+      .payment,
+      .proof,
+      .final-cta {
         grid-template-columns: 1fr;
-        flex-direction: column;
-        text-align: center;
       }
 
       header {
         flex-direction: column;
+        text-align: center;
       }
 
       .brand {
@@ -372,12 +485,12 @@
       }
 
       .brand h1 {
-        font-size: 38px;
+        font-size: 42px;
       }
 
       .trust {
-        justify-content: center;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .urgency {
@@ -385,14 +498,36 @@
         text-align: center;
       }
 
-      .hero h2 {
-        font-size: 38px;
+      .units {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 18px 0;
       }
 
-      .payment-option:first-child {
+      h2 {
+        font-size: 44px;
+      }
+
+      .product-wrap {
+        min-height: 340px;
+      }
+
+      .shield {
+        width: 170px;
+        top: 0;
+        right: 0;
+      }
+
+      .shield strong {
+        font-size: 24px;
+      }
+
+      .pay-card:first-child,
+      .proof div:first-child {
         border-right: none;
-        border-bottom: 1px solid var(--borde);
-        padding-bottom: 28px;
+        border-bottom: 1px solid var(--line);
       }
 
       .benefits {
@@ -401,16 +536,11 @@
 
       .benefit {
         border-right: none;
-        border-bottom: 1px solid var(--borde);
-        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
       }
 
       .benefit:last-child {
         border-bottom: none;
-      }
-
-      .bottom .btn {
-        width: 100%;
       }
     }
   </style>
@@ -429,28 +559,28 @@
       </div>
 
       <div class="trust">
-        <div>🛡️<br />COMPRA<br />SEGURA</div>
-        <div>🚚<br />ENTREGA<br />RÁPIDA</div>
-        <div>✅<br />RESPALDO<br />GARANTIZADO</div>
+        <div><span>🛡</span>COMPRA<br>SEGURA</div>
+        <div><span>🚚</span>ENTREGA<br>RÁPIDA</div>
+        <div><span>✅</span>RESPALDO<br>GARANTIZADO</div>
       </div>
     </header>
 
     <section class="urgency">
       <div>
         <strong>LOTE LIMITADO</strong>
-        <span>¡No te quedes sin el tuyo!</span>
+        <small>¡No te quedes sin el tuyo!</small>
       </div>
 
-      <div style="text-align:center;">
-        <span>QUEDAN</span>
+      <div class="units">
+        <small>QUEDAN</small>
         <div class="number">18</div>
         <strong style="font-size:16px;">UNIDADES DISPONIBLES</strong>
       </div>
 
-      <div style="text-align:center;">
+      <div class="timer-box">
         <strong style="font-size:16px;">LA OFERTA TERMINA EN:</strong>
         <div class="timer" id="timer">02 : 14 : 36 : 42</div>
-        <span>DÍAS &nbsp;&nbsp; HS &nbsp;&nbsp; MIN &nbsp;&nbsp; SEG</span>
+        <small>DÍAS &nbsp;&nbsp; HS &nbsp;&nbsp; MIN &nbsp;&nbsp; SEG</small>
       </div>
     </section>
 
@@ -459,103 +589,111 @@
         <div class="badge">OFERTA DEL MES</div>
 
         <h2>
-          Colchón Spring Air King + Seguro de Hogar <span>Incluido</span>
+          Colchón Spring Air King
+          <br>+ <span class="green">Garantía Extendida</span>
+          <br><span class="brush">Incluida</span>
         </h2>
 
         <p>
-          Máximo confort para tu descanso. Compralo contado o en cuotas con crédito aprobado en minutos.
+          El máximo confort para tu descanso. Compralo contado o en cuotas con crédito aprobado en minutos.
         </p>
 
         <ul class="bullets">
-          <li>Confort premium</li>
-          <li>Máxima durabilidad</li>
-          <li>Descanso garantizado</li>
+          <li>Máximo confort <span>Descanso premium</span></li>
+          <li>Máxima durabilidad <span>Materiales de alta calidad</span></li>
+          <li>Descanso garantizado <span>Tu mejor elección</span></li>
         </ul>
       </div>
 
-      <div class="product-img">
-        <img src="colchon.png" alt="Colchón Spring Air King" />
+      <div class="product-wrap">
+        <div class="glow-circle"></div>
+
+        <div class="shield">
+          <strong>Incluye<br>Garantía<br>Extendida</strong>
+          <small>POR 24 MESES</small>
+        </div>
+
+        <img src="colchon.png" alt="Colchón Spring Air King">
       </div>
     </section>
 
-    <section class="payment-box">
-      <div class="payment-option">
-        <h3>PAGÁ CONTADO</h3>
-        <p>Precio especial</p>
+    <section class="payment">
+      <div class="pay-card">
+        <h3>Pagá contado</h3>
+        <div class="label">Precio especial</div>
         <div class="price">USD 850</div>
 
-        <a class="btn green" href="https://LINK-DE-PAGO.com" target="_blank">
+        <a class="btn" href="https://LINK-DE-PAGO.com" target="_blank">
           Comprar ahora con tarjeta →
         </a>
 
-        <p class="legal" style="text-align:center; margin-top:14px;">
-          Pago 100% seguro
-        </p>
+        <div class="micro">🔒 Pago 100% seguro</div>
       </div>
 
-      <div class="payment-option blue">
-        <h3>PAGÁ EN CUOTAS</h3>
-        <p>Desde</p>
-        <div class="price blue">$X.XXX <span style="font-size:18px;">/mes</span></div>
-        <p class="legal">Sujeto a aprobación crediticia</p>
+      <div class="pay-card">
+        <h3>Pagá en cuotas</h3>
+        <div class="label">Desde</div>
+        <div class="price green">$X.XXX <span style="font-size:20px;">/mes</span></div>
+        <div class="legal">Sujeto a aprobación crediticia</div>
 
-        <a class="btn blue" href="https://wa.me/598XXXXXXXX?text=Hola,%20quiero%20comprar%20el%20colch%C3%B3n%20en%20cuotas%20con%20cr%C3%A9dito" target="_blank">
+        <a class="btn" href="https://wa.me/598XXXXXXXX?text=Hola,%20quiero%20comprar%20el%20colch%C3%B3n%20con%20garant%C3%ADa%20extendida%20en%20cuotas" target="_blank">
           Comprar en cuotas con crédito →
         </a>
 
-        <p class="legal" style="text-align:center; margin-top:14px;">
-          Aprobación en minutos
-        </p>
+        <div class="micro">⏱ Aprobación en minutos</div>
       </div>
     </section>
 
     <section class="benefits">
       <div class="benefit">
-        <strong>Incluye seguro de hogar por 12 meses</strong>
-        <span>Sin costo adicional</span>
+        <span class="icon">🛡</span>
+        <strong>Garantía extendida por 24 meses</strong>
+        <span>Incluida sin costo adicional</span>
       </div>
 
       <div class="benefit">
+        <span class="icon">🚚</span>
         <strong>Entrega rápida en 24–48 hs</strong>
         <span>En todo el país</span>
       </div>
 
       <div class="benefit">
+        <span class="icon">📄</span>
         <strong>Sin trámites complicados</strong>
         <span>100% online</span>
       </div>
 
       <div class="benefit">
+        <span class="icon">✅</span>
         <strong>Calidad garantizada</strong>
         <span>Marca Spring Air</span>
       </div>
     </section>
 
-    <section class="security">
+    <section class="proof">
       <div>
         <h3>Tu compra protegida</h3>
-        <p>Todos nuestros productos incluyen garantía oficial y respaldo postventa.</p>
+        <p>Todos nuestros productos incluyen garantía oficial, garantía extendida y respaldo postventa.</p>
       </div>
 
       <div>
         <div class="stars">★★★★★</div>
-        <p style="text-align:center;">Miles de clientes satisfechos</p>
+        <p style="text-align:center; font-weight:900;">Miles de clientes satisfechos</p>
       </div>
     </section>
 
-    <section class="bottom">
+    <section class="final-cta">
       <div>
         <h3>¡Aprovechá esta oferta única!</h3>
         <p>Stock limitado. Cuando se acaba, se acaba.</p>
       </div>
 
-      <a class="btn green" href="#top">No me lo pierdo →</a>
+      <a class="btn" href="#top">No me lo pierdo →</a>
     </section>
 
   </main>
 
   <script>
-    // Countdown simple. Cambiar fecha final acá:
     const endDate = new Date();
     endDate.setDate(endDate.getDate() + 2);
     endDate.setHours(endDate.getHours() + 14);
